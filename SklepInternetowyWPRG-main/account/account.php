@@ -61,6 +61,7 @@ if(isset($_SESSION['logged_in'])){
 
     $result = $stmt->get_result();
 
+    $orders = [];
     while ($row = $result->fetch_assoc()) {
         $orders[] = $row;
     }
@@ -250,7 +251,7 @@ if(isset($_SESSION['logged_in'])){
                             <th><i class="fas fa-search me-2"></i>Details</th>
                         </tr>
                         </thead>
-                        <?php if(count($orders) > 0) { ?>
+                        <?php if (count($orders) > 0) { ?>
                             <tbody>
                             <?php foreach($orders as $order) { ?>
                                 <tr>
